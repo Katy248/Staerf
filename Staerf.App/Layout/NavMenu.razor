@@ -1,0 +1,22 @@
+﻿@inject IStringLocalizer<NavMenu> L
+
+<nav class="grid grid-cols-3 gap-1 lg:flex lg:flex-row lg:gap-2 lg:flex-wrap lg:justify-around">
+    <a class="logo nav-item" href="">
+        @L["Staerf"]
+    </a>
+    <NavLink class="nav-link nav-item" href="" Match="NavLinkMatch.All">
+        @L["Home"]
+    </NavLink>
+    <NavLink class="nav-link nav-item" href="releases">
+        @L["Releases"]
+    </NavLink>
+    <NavLink class="nav-link nav-item" href="wiki">
+        @L["Wiki"]
+    </NavLink>
+    <NavLink class="nav-link nav-item" href="blog">
+        @L["Blog"]
+    </NavLink>
+    <NavLink class="nav-link nav-item" href="about">
+        @L["About"]
+    </NavLink>
+</nav>

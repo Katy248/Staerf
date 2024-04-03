@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply ease-linear flex flex-col min-h-screen text-fg dark:text-fg-dark bg-bg dark:bg-bg-dark;
+}
+
+.text-transparent {
+    color: transparent;
+}
+
+* {
+    @apply delay-75 transition duration-300 selection:text-bg dark:selection:text-bg-dark selection:bg-blue dark:selection:bg-blue-dark;
+}
+
+header {
+    @apply bg-bg-1 dark:bg-bg-1-dark p-1 lg:p-0 lg:pt-2;
+}
+
+main {
+    @apply flex-grow;
+}
+
+.gradient {
+    @apply text-transparent bg-clip-text from-blue to-green hover:from-green hover:to-blue dark:from-blue-dark dark:to-green-dark bg-gradient-to-tr dark:hover:from-green-dark dark:hover:to-blue-dark duration-1000 delay-200;
+}
+
+.big-text {
+    @apply text-9xl font-bold py-2 gradient;
+}
+
+.logo {
+    @apply text-xl font-bold block gradient;
+}
+
+.nav-item {
+    @apply rounded-xl p-2 px-4 flex justify-center text-center flex-col;
+}
+
+.nav-link {
+    @apply font-semibold mb-0 select-none;
+}
+
+.nav-link:not(.active) {
+    @apply lg:mb-1 hover:bg-blue-dim hover:dark:bg-blue-dim-dark hover:text-fg hover:dark:text-fg-dark text-fg-3 dark:text-fg-3-dark hover:drop-shadow-sm hover:dark:shadow-blue-dim-dark;
+}
+
+.nav-link.active {
+    @apply bg-bg text-fg dark:bg-bg-dark dark:text-fg-dark lg:rounded-b-none drop-shadow-sm shadow-bg dark:shadow-bg-dark lg:shadow-none lg:drop-shadow-none;
+}
+
+h1 {
+    @apply gradient text-3xl font-semibold;
+}
+
+h2 {
+    @apply text-2xl font-semibold;
+}
+
+
+.card {
+    @apply bg-bg-1 dark:bg-bg-1-dark flex flex-col justify-between gap-2 p-2 rounded-xl drop-shadow-sm shadow-bg-1 dark:shadow-bg-1-dark;
+}
+
+.card-item {
+    @apply rounded-lg p-1 px-3;
+}
+
+.button {
+    @apply block select-none p-2 text-center font-semibold rounded-md drop-shadow-sm bg-bg-1 dark:bg-bg-1-dark shadow-bg-2 dark:shadow-bg-2-dark hover:bg-bg-s hover:dark:bg-bg-s-dark;
+}
+
+.button.button-primary {
+    @apply bg-blue-dim dark:bg-blue-dim-dark shadow-blue dark:shadow-blue-dark hover:bg-blue hover:dark:bg-blue-dark;
+}
+
+.button.button-secondary {
+    @apply bg-green-dim dark:bg-green-dim-dark shadow-green dark:shadow-green-dark hover:bg-green hover:dark:bg-green-dark;
+}
+
+.button.button-info {
+    @apply bg-aqua-dim dark:bg-aqua-dim-dark shadow-aqua dark:shadow-aqua-dark hover:bg-aqua hover:dark:bg-aqua-dark;
+}
+
+.button.button-warning {
+    @apply bg-yellow-dim dark:bg-yellow-dim-dark shadow-yellow dark:shadow-yellow-dark hover:bg-yellow hover:dark:bg-yellow-dark;
+}
+
+.button.button-critical {
+    @apply bg-red-dim dark:bg-red-dim-dark shadow-red dark:shadow-red-dark hover:bg-red hover:dark:bg-red-dark;
+}
+
+#blazor-error-ui {
+    @apply hidden bg-bg-3 dark:bg-bg-3-dark p-5 rounded-t-xl flex flex-row gap-2 justify-center bottom-0 sticky;
+}
+
+#blazor-error-ui a {
+    @apply p-2 px-4 rounded-xl;
+}
+
+#blazor-error-ui a.reload {
+    @apply bg-red-dim dark:bg-red-dim-dark;
+}
+
+#blazor-error-ui a.dismiss {
+    @apply bg-orange-dim dark:bg-orange-dim-dark;
+}

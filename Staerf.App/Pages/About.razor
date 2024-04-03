@@ -1,0 +1,10 @@
+@page "/about"
+
+@inject IStringLocalizer<About> L
+
+<div class="flex flex-col gap-5">
+
+    <h1>@L["About"]</h1>
+
+    @((MarkupString)(L["about-article"]).ToString())
+</div>

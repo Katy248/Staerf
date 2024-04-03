@@ -1,0 +1,52 @@
+@page "/releases"
+@inject IStringLocalizer<Releases> L
+
+<PageTitle>@L["Releases"]</PageTitle>
+
+<h1>@L["Releases by staerf"]</h1>
+<h2>
+    @L["All songs"]:
+</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2">
+
+    @foreach (var song in _songs)
+    {
+        <div class="card m-2">
+
+            @* <img class="card-item"
+                src="https://t2.genius.com/unsafe/88x88/https%3A%2F%2Fimages.genius.com%2F6f4c5fb78a5f8c7e20d9b1f13ccc9076.1000x1000x1.jpg"> *@
+            <div class="text-xl px-2 text-fg-1 dark:text-fg-1-dark">
+                @song.Name
+            </div>
+            <div class="card-item">
+                    @L["Release date"]: 
+                <span class="text-orange dark:text-orange-dark font-mono">
+                @DateTime.Now.AddDays(2).ToShortDateString()
+                </span>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(song.StolenFrom))
+            {
+                <div class="card-item">
+                        @L["Stolen from"]:
+                    <span class="text-aqua-dim dark:text-aqua-dim-dark">
+                    @song.StolenFrom
+                    </span>
+                </div>
+            }
+            <a class="button button-primary" href="release/1488">
+                @L["Details"]
+            </a>
+        </div>
+    }
+</div>
+@code {
+    Song[] _songs =
+    [
+    new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
+new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
+new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
+new Song("Drift", ""),
+new Song("Deo", "ВИА Гра - Моя попытка №5"),
+];
+}

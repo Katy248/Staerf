@@ -1,0 +1,33 @@
+﻿@page "/"
+@inject IStringLocalizer<Home> L
+<PageTitle>@L["Home"]</PageTitle>
+
+<h1 class="big-text">
+    @L["Hello, world!"]
+</h1>
+<h2>@L["Language"] - @L["lang"]</h2>
+
+Welcome to your new app.
+
+<div class="grid gap-2">
+
+    <button class="button">
+        @L["Button"] - none
+    </button>
+    <button class="button button-primary">
+        @L["Button"] - primary
+    </button>
+    <button class="button button-secondary">
+        @L["Button"] - secondary
+    </button>
+    <button class="button button-info">
+        @L["Button"] - info
+    </button>
+    <button class="button button-warning">
+        @L["Button"] - warning
+    </button>
+    <button class="button button-critical">
+        @L["Button"] - critical
+    </button>
+
+</div>
