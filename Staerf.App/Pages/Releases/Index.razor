@@ -1,5 +1,5 @@
 @page "/releases"
-@inject IStringLocalizer<Releases> L
+@inject IStringLocalizer<Index> L
 
 <PageTitle>@L["Releases"]</PageTitle>
 
@@ -10,7 +10,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2">
 
-    @foreach (var song in _songs)
+    @foreach (var song in GetSongs().OrderBy(s => s.Name))
     {
         <div class="card m-2">
 
@@ -18,6 +18,17 @@
                 src="https://t2.genius.com/unsafe/88x88/https%3A%2F%2Fimages.genius.com%2F6f4c5fb78a5f8c7e20d9b1f13ccc9076.1000x1000x1.jpg"> *@
             <div class="text-xl px-2 text-fg-1 dark:text-fg-1-dark">
                 @song.Name
+            </div>
+            <div class="card-item">
+                    @L["Artists"]: 
+                    @foreach(var artist in song.Artists)
+                    {
+                        <a 
+                            class="text-lg bg-bg-2 dark:bg-bg-2-dark rounded-md px-2 py-1 text-purple dark:text-purple-dark font-italic me-1 hover:bg-bg hover:dark:bg-bg-dark hover:text-purple-dim hover:dark:text-purple-dim-dark"
+                            href="person/@artist.PersonId">
+                            @artist.Name
+                        </a>
+                    }
             </div>
             <div class="card-item">
                     @L["Release date"]: 
@@ -41,12 +52,15 @@
     }
 </div>
 @code {
-    Song[] _songs =
+    static Artist _staerf = new("Staerf", "staerf");
+    static Artist _otets = new("OTETS", "otets");
+    static Artist _s = new("C...", "s");
+    Song[] GetSongs() =>
     [
-    new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
-new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
-new Song("Alien", "Alexandra Stan - Mr. Saxobeat"),
-new Song("Drift", ""),
-new Song("Deo", "ВИА Гра - Моя попытка №5"),
+    new Song("Alien",[_staerf], "Alexandra Stan - Mr. Saxobeat"),
+new Song("Depth",[_staerf, _otets], ""),
+new Song("Drift", [_staerf], ""),
+new Song("Deo",[_staerf], "ВИА Гра - Моя попытка №5"),
+new Song("Money",[_s]),
 ];
 }

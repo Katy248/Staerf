@@ -125,4 +125,20 @@
     <value>Подробнее</value>
     <comment/>
   </data>
+  <data name="Artist" xml:space="preserve">
+    <value>Исполнитель</value>
+    <comment/>
+  </data>
+  <data name="Stolen from" xml:space="preserve">
+    <value>Спизжено с</value>
+    <comment/>
+  </data>
+  <data name="Artists" xml:space="preserve">
+    <value>Исполнители</value>
+    <comment/>
+  </data>
+  <data name="Release date" xml:space="preserve">
+    <value>Дата выхода</value>
+    <comment/>
+  </data>
 </root>
