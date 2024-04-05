@@ -62,33 +62,47 @@ h2 {
 .card {
     @apply bg-bg-1 dark:bg-bg-1-dark flex flex-col justify-between gap-2 p-2 rounded-xl drop-shadow-sm shadow-bg-1 dark:shadow-bg-1-dark;
 }
-
+.card-body {
+    @apply px-2 flex flex-col justify-start;
+}
 .card-item {
-    @apply rounded-lg p-1 px-3;
+    @apply rounded-lg p-1;
 }
 
 .button {
     @apply block select-none p-2 text-center font-semibold rounded-md drop-shadow-sm bg-bg-1 dark:bg-bg-1-dark shadow-bg-2 dark:shadow-bg-2-dark hover:bg-bg-s hover:dark:bg-bg-s-dark;
 }
-
-.button.button-primary {
-    @apply bg-blue-dim dark:bg-blue-dim-dark shadow-blue dark:shadow-blue-dark hover:bg-blue hover:dark:bg-blue-dark;
+.card > .button {
+    @apply rounded-lg p-2 px-4 flex justify-center text-center flex-col;
 }
 
-.button.button-secondary {
+.button-primary {
+    @apply bg-blue-dim dark:bg-blue-dim-dark shadow-blue dark:shadow-blue-dark hover:bg-blue hover:dark:bg-blue-dark;
+}
+.button-primary-outline {
+    @apply border-2 bg-none  border-blue-dim dark:border-blue-dim-dark hover:shadow-blue-dim hover:dark:shadow-blue-dim-dark hover:bg-blue-dim hover:dark:bg-blue-dim-dark;
+    /* text */
+    @apply text-blue dark:text-blue-dark hover:text-fg hover:dark:text-fg-dark;
+}
+
+.button-secondary {
     @apply bg-green-dim dark:bg-green-dim-dark shadow-green dark:shadow-green-dark hover:bg-green hover:dark:bg-green-dark;
 }
 
-.button.button-info {
+.button-info {
     @apply bg-aqua-dim dark:bg-aqua-dim-dark shadow-aqua dark:shadow-aqua-dark hover:bg-aqua hover:dark:bg-aqua-dark;
 }
 
-.button.button-warning {
+.button-warning {
     @apply bg-yellow-dim dark:bg-yellow-dim-dark shadow-yellow dark:shadow-yellow-dark hover:bg-yellow hover:dark:bg-yellow-dark;
 }
 
-.button.button-critical {
+.button-critical {
     @apply bg-red-dim dark:bg-red-dim-dark shadow-red dark:shadow-red-dark hover:bg-red hover:dark:bg-red-dark;
+}
+
+.link {
+    @apply hover:underline;
 }
 
 #blazor-error-ui {
