@@ -1,10 +1,13 @@
 using Staerf.App.Components;
+using Staerf.App.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddTransient<SongsRepository>();
 
 builder.Services.AddLocalization(options => { options.ResourcesPath = "Resources"; });
 // builder.Services.AddPortableObjectLocalization(options => options.ResourcesPath = "Localization");

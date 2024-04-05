@@ -1,5 +1,6 @@
 @page "/releases"
 @inject IStringLocalizer<Index> L
+@inject SongsRepository Songs
 
 <PageTitle>@L["Releases"]</PageTitle>
 
@@ -10,7 +11,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 m-2">
 
-    @foreach (var song in GetSongs().OrderBy(s => s.Name))
+    @foreach (var song in Songs.GetSongs().OrderBy(s => s.Name))
     {
         <div class="card m-2">
 
@@ -46,14 +47,14 @@
                     @DateTime.Now.AddDays(2).ToShortDateString()
                     </span>
                 </div>
-                @if (!string.IsNullOrWhiteSpace(song.StolenFrom))
+                @if (true)
                 {
                     <div class="card-item">
                             @L["Stolen from"]:
                         <a 
                             class="link text-aqua-dim dark:text-aqua-dim-dark"
                             href="release/">
-                        @song.StolenFrom
+                        @* @song.StolenFrom.Name *@
                         </a>
                     </div>
                 }
@@ -65,17 +66,5 @@
     }
 </div>
 @code {
-    static Artist _staerf = new("Staerf", "staerf");
-    static Artist _otets = new("OTETS", "otets");
-    static Artist _s = new("C...", "s");
-    static Artist _via = new("ВИА Гра", "viagra");
-    Song[] GetSongs() =>
-    [
-    new Song("Alien",[_staerf], "Alexandra Stan - Mr. Saxobeat"),
-new Song("Depth",[_staerf, _otets], ""),
-new Song("Drift", [_staerf], ""),
-new Song("Deo",[_staerf], "ВИА Гра - Моя попытка №5"),
-new Song("Money",[_s]),
-new Song("Моя попытка №5",[_via]),
-];
+
 }
